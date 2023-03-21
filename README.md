@@ -19,22 +19,6 @@ C:\Program Files\Blender Foundation\Blender 2.82\2.82\python\bin
 python.exe -m pip install --upgrade pip setuptools wheel --user
 python.exe -m pip install opencv-python --user
 ```
-### On ubuntu linux terminal
-
-a. Note hard to install with multi python in sys path
-b. Alternative using method using pip by blender --python-expr
-```
-blender -b --python-expr "__import__('ensurepip')._bootstrap()" 
-```
-c. Update pip toolchain to latest
-```
-blender -b --python-expr "__import__('pip._internal')._internal.main(['install', '-U', 'pip', 'setuptools', 'wheel'])"
-```
-d. Pip install the required library, opencv.
-```
-blender -b --python-expr "__import__('pip._internal')._internal.main(['install', 'opencv-python'])"
-```
-
 3. Copy the addon folder to the Blender Addon Folder which can be found at
 ```
 C:\Program Files\Blender Foundation\Blender 2.82\2.82\scripts\addons
@@ -42,6 +26,23 @@ C:\Program Files\Blender Foundation\Blender 2.82\2.82\scripts\addons
 4. Start blender and go to User Prefences and search for PBR Texture Map Generator addon
 5. Enable and use
 6. The Panel will be located in the 3D viewport, under the Tools Panel
+
+
+### On ubuntu linux terminal
+a. In the terminal there may be multi python version in sys path.
+b. An alternative solution is to use pip with blender --python-expr
+```
+  blender -b --python-expr "__import__('ensurepip')._bootstrap()" 
+```
+c. Update pip toolchain to latest
+```
+  blender -b --python-expr "__import__('pip._internal')._internal.main(['install', '-U', 'pip', 'setuptools', 'wheel'])"
+```
+d. Pip install the required library, opencv.
+```
+  blender -b --python-expr "__import__('pip._internal')._internal.main(['install', 'opencv-python'])"
+```
+
 
 ## Using the Texture Generator
 [![Main Panel](https://user-images.githubusercontent.com/43339338/76146177-b11cf200-60b6-11ea-839d-face3cb429ac.png)]()
