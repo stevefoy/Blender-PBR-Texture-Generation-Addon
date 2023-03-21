@@ -28,7 +28,7 @@ blender -b --python-expr "__import__('pip._internal')._internal.main(['install',
 
 # pip install opencv-python (or any package)
 # Result : Successfully installed numpy-1.24.2 opencv-python-4.7.0.72
-
+```
 blender -b --python-expr "__import__('pip._internal')._internal.main(['install', 'opencv-python'])"
 ```
 
