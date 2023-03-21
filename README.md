@@ -19,15 +19,18 @@ C:\Program Files\Blender Foundation\Blender 2.82\2.82\python\bin
 python.exe -m pip install --upgrade pip setuptools wheel --user
 python.exe -m pip install opencv-python --user
 ```
-On ubuntu linux terminal and run the following commands, get around the execution paths or to run multiple python files in succession 
-# Get pip: equl to /blender-path/2.xx/python/bin/python3.7m -m ensurepip
+### On ubuntu linux terminal
+
+a. Note hard to install with multi python in sys path
+b. Alternative using method using pip by blender --python-expr
+```
 blender -b --python-expr "__import__('ensurepip')._bootstrap()" 
-
-# Update pip toolchain
+```
+c. Update pip toolchain to latest
+```
 blender -b --python-expr "__import__('pip._internal')._internal.main(['install', '-U', 'pip', 'setuptools', 'wheel'])"
-
-# pip install opencv-python (or any package)
-# Result : Successfully installed numpy-1.24.2 opencv-python-4.7.0.72
+```
+d. Pip install the required library, opencv.
 ```
 blender -b --python-expr "__import__('pip._internal')._internal.main(['install', 'opencv-python'])"
 ```
