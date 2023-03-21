@@ -14,11 +14,24 @@ To run the addon in blender we need to install OpenCV for blender which can be i
 ```
 C:\Program Files\Blender Foundation\Blender 2.82\2.82\python\bin
 ```
-2. Open the system terminal and execute the following commands
+2. Open the windows system terminal and execute the following commands
 ```
 python.exe -m pip install --upgrade pip setuptools wheel --user
 python.exe -m pip install opencv-python --user
 ```
+On ubuntu linux terminal and run the following commands, get around the execution paths or to run multiple python files in succession 
+# Get pip: equl to /blender-path/2.xx/python/bin/python3.7m -m ensurepip
+blender -b --python-expr "__import__('ensurepip')._bootstrap()" 
+
+# Update pip toolchain
+blender -b --python-expr "__import__('pip._internal')._internal.main(['install', '-U', 'pip', 'setuptools', 'wheel'])"
+
+# pip install opencv-python (or any package)
+# Result : Successfully installed numpy-1.24.2 opencv-python-4.7.0.72
+
+blender -b --python-expr "__import__('pip._internal')._internal.main(['install', 'opencv-python'])"
+```
+
 3. Copy the addon folder to the Blender Addon Folder which can be found at
 ```
 C:\Program Files\Blender Foundation\Blender 2.82\2.82\scripts\addons
